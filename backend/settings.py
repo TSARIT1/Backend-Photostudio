@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -136,6 +137,11 @@ REST_FRAMEWORK = {
     ],
 }
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -148,3 +154,5 @@ EMAIL_HOST_PASSWORD = 'your-app-password'
 
 AUTH_USER_MODEL = 'api.User'
     
+DATA_UPLOAD_MAX_MEMORY_SIZE = 52428800  # 50MB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 52428800 

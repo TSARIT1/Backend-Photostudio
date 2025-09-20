@@ -7,6 +7,8 @@ from .views import *
 router = DefaultRouter()
 router.register(r'users', UserViewSet, basename='user')
 router.register(r'crm',CrmViewSet,basename='crm')
+router.register(r'invoices', InvoiceViewSet, basename='invoice')
+router.register(r'datastore', DataStoreViewSet, basename='datastore')
 
 
 urlpatterns = [
